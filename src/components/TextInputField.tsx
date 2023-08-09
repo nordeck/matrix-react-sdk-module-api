@@ -18,6 +18,7 @@ import * as React from "react";
 
 export interface TextInputFieldProps {
     label: string;
+    placeholder?: string;
     value: string;
     onChange: (newValue: string) => void;
 }
@@ -31,7 +32,7 @@ export class TextInputField extends React.PureComponent<TextInputFieldProps> {
     public static renderFactory = (props: TextInputFieldProps): React.ReactNode => (
         <label>
             {props.label}
-            <input type="text" onChange={e => props.onChange(e.target.value)} value={props.value} />
+            <input type="text" placeholder={props.placeholder} onChange={e => props.onChange(e.target.value)} value={props.value} />
         </label>
     );
 
